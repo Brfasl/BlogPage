@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// test rota
+Route::get('/test',function (){
+    return view('panel.layout.app');
+});

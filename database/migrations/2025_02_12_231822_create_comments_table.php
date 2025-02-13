@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('post_id')->constrained()->onDelete('cascade'); // Post ile ilişki
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Kullanıcı ile ilişki
+            $table->text('content'); // Yorum içeriği
+            $table->boolean('is_approved')->default(true); // Onay durumu
+            $table->softDeletes();
             $table->timestamps();
         });
     }

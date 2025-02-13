@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Kullanıcı ile ilişkilendir
+            $table->foreignId('category_id')->nullable()->constrained()->onDelete('set null'); // Kategori ile ilişkilendir
+            $table->string('title'); // Yazı başlığı
+            $table->text('content'); // Yazı içeriği
+            $table->string('slug')->unique(); // URL dostu başlık
+            $table->boolean('is_published')->default(false); // Yayın durumu
+            $table->softDeletes();
+            $table->timestamps(); // created_at ve updated_at
+
         });
     }
 

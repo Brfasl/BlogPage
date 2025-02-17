@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Sayfası</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome için link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Genel stil ayarları */
         body {
@@ -19,7 +19,6 @@
         .logo-container {
             display: flex;
             align-items: center;
-            justify-content: space-between;
             padding: 20px 30px;
             background-color: #007bff;
             color: #fff;
@@ -38,7 +37,51 @@
             letter-spacing: 1px;
         }
 
-        /* Menü çubuğu */
+        /* Profil ayarları sol üstte */
+        .profile-settings {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .profile-settings .profile-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: #007bff;
+            margin-right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .profile-settings input {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: 2px solid #007bff;
+            border-radius: 25px;
+            width: 250px;
+            margin-right: 15px;
+            box-sizing: border-box;
+        }
+
+        .profile-settings .add-photo {
+            background-color: #007bff;
+            padding: 8px 15px;
+            color: white;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .profile-settings .add-photo:hover {
+            background-color: #0056b3;
+        }
+
+        /* Üst menü */
         .nav-bar {
             display: flex;
             justify-content: center;
@@ -113,32 +156,6 @@
             color: #007BFF;
         }
 
-        /* Profil sağ üst köşeye yerleştirilmiş */
-        .profile {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            background-color: #fff;
-            padding: 10px 15px;
-            border-radius: 30px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .profile img {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-
-        .profile span {
-            font-weight: bold;
-            color: #444;
-        }
-
     </style>
 </head>
 <body>
@@ -147,6 +164,15 @@
 <div class="logo-container">
     <img src="logo.png" alt="Logo">
     <span>BlogMe</span>
+</div>
+
+<!-- Profil ayarları sol üstte -->
+<div class="profile-settings">
+    <!-- Profil Resmi kısmı boş -->
+
+    <!-- Kullanıcı adını veri tabanından alıp yazdırıyoruz -->
+
+    <button class="add-photo">Profil Resmi Ekle</button>
 </div>
 
 <!-- Üst menü -->
@@ -174,12 +200,6 @@
 <div class="search-box">
     <i class="fas fa-search"></i>
     <input type="text" placeholder="Ara...">
-</div>
-
-<!-- Profil sağ üst köşeye yerleştirilmiş -->
-<div class="profile">
-    <img src="profil-resmi.jpg" alt="Profil Resmi">
-    <span>Profil</span>
 </div>
 
 <main>

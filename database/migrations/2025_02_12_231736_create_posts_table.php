@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Kullanıcı ile ilişkilendir
-            $table->foreignId('category_id')->nullable()->constrained()->onDelete('set null'); // Kategori ile ilişkilendir
+            $table->unsignedBigInteger('user_id')->constrained()->onDelete('cascade'); // Kullanıcı ile ilişkilendir
+            $table->unsignedBigInteger('category_id')->nullable()->constrained()->onDelete('set null'); // Kategori ile ilişkilendir
             $table->string('title'); // Yazı başlığı
             $table->text('content'); // Yazı içeriği
             $table->string('slug')->unique(); // URL dostu başlık

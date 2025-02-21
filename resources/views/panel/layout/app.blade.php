@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
-    <title>Fluid - Layouts | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>@yield('title')</title>
 
     <meta name="description" content="">
 
@@ -520,7 +520,7 @@
                             ©
                             <script>
                                 document.write(new Date().getFullYear());
-                            </script>2025
+                            </script>
                             , made with ❤️ by
                             <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
                         </div>

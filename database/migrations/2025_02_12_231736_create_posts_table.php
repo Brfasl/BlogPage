@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->constrained()->onDelete('cascade'); // Kullanıcı ile ilişkilendir
             $table->unsignedBigInteger('category_id')->nullable()->constrained()->onDelete('set null'); // Kategori ile ilişkilendir
             $table->string('title'); // Yazı başlığı
+            $table->text('description'); // Açıklama metni
             $table->text('content'); // Yazı içeriği
             $table->string('slug')->unique(); // URL dostu başlık
             $table->boolean('is_published')->default(false); // Yayın durumu

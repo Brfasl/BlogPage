@@ -17,4 +17,11 @@ class PostDescription extends Model
     {
         return $this->belongsTo(Post::class);
     }
+    public function show($id)
+    {
+        $post = Post::findOrFail($id); // Post'u getir
+        $descriptions = PostDescription::where('post_id', $id)->get(); // Post'un açıklamalarını al
+
+        return view('posts.show', compact('post', 'descriptions'));
+    }
 }

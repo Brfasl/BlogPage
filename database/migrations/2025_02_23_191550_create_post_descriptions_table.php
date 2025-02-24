@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('post_descriptions', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('post_id'); // Post tablosuyla ilişki
+            $table->text('description'); // Açıklama metni
             $table->timestamps();
+            $table->softDeletes(); // Soft delete ekleniyor
+
+            // Foreign Key (Post tablosuna bağlanıyor)
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
         });
     }
 

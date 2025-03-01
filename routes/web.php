@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\PostDescriptionController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\Back\BlogsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +18,27 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('panel.homepage');
 });
-Route::resource('descriptions', PostDescriptionController::class);
-Route::get('descriptions', [PostDescriptionController::class, 'index'])->name('descriptions.index');
-Route::get('descriptions/create', [PostDescriptionController::class, 'create'])->name('descriptions.create');
-Route::post('descriptions', [PostDescriptionController::class, 'store'])->name('descriptions.store');
-Route::get('descriptions/{description}/edit', [PostDescriptionController::class, 'edit'])->name('descriptions.edit');
-Route::put('descriptions/{description}', [PostDescriptionController::class, 'update'])->name('descriptions.update');
-Route::delete('descriptions/{description}', [PostDescriptionController::class, 'destroy'])->name('descriptions.destroy');
+
+Route::group(["prefix" => "admin"], function () {
+    Route::get('/blogs', function () {
+        return "Admin Blogs";
+    });
+
+    Route::get('/blogs/{id}', function ($id) {
+        return "Blog ID: " . $id;
+    });
+});
+
+
+
+
+Route::resource('descriptions', PostController::class);
+Route::get('descriptions', [PostController::class, 'index'])->name('descriptions.index');
+Route::get('descriptions/create', [PostController::class, 'create'])->name('descriptions.create');
+Route::post('descriptions', [PostController::class, 'store'])->name('descriptions.store');
+Route::get('descriptions/{description}/edit', [PostController::class, 'edit'])->name('descriptions.edit');
+Route::put('descriptions/{description}', [PostController::class, 'update'])->name('descriptions.update');
+Route::delete('descriptions/{description}', [PostController::class, 'destroy'])->name('descriptions.destroy');
 
 
 

@@ -27,6 +27,10 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/blogs/{id}', function ($id) {
         return "Blog ID: " . $id;
     });
+
+    Route::get('/profile', function ($id) {
+        return "Blog ID: " . $id;
+    });
 });
 
 

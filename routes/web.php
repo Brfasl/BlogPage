@@ -15,9 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//test
+Route::get('/test', function () {
+    return view('welcome');
+});
+
 Route::get('/', function () {
     return view('panel.homepage');
 });
+
 
 Route::group(["prefix" => "admin"], function () {
     Route::get('/blogs', function () {
@@ -48,3 +54,13 @@ Route::delete('descriptions/{description}', [PostController::class, 'destroy'])-
 
 
 
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

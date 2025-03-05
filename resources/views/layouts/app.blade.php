@@ -20,23 +20,79 @@
     <body class="font-sans antialiased">
         <x-banner />
 
-        <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
+        <header class="flex items-center justify-between py-3 px-6 border-b border-gray-100">
+            <div id="header-left" class="flex items-center">
+                <div class="text-gray-800 font-semibold">
+                    <span class="text-yellow-500 text-xl">&lt;YELO&gt;</span> Code
+                </div>
+                <div class="top-menu ml-10">
+                    <ul class="flex space-x-4">
+                        <li>
+                            <a class="flex space-x-2 items-center hover:text-yellow-900 text-sm text-yellow-500"
+                               href="http://127.0.0.1:8000">
+                                Home
+                            </a>
+                        </li>
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+                        <li>
+                            <a class="flex space-x-2 items-center hover:text-yellow-500 text-sm text-gray-500"
+                               href="http://127.0.0.1:8000/blog">
+                                Blog
+                            </a>
+                        </li>
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
+                        <li>
+                            <a class="flex space-x-2 items-center hover:text-yellow-500 text-sm text-gray-500"
+                               href="http://127.0.0.1:8000/blog">
+                                About Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="flex space-x-2 items-center hover:text-yellow-500 text-sm text-gray-500"
+                               href="http://127.0.0.1:8000/blog">
+                                Contact Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="flex space-x-2 items-center hover:text-yellow-500 text-sm text-gray-500"
+                               href="http://127.0.0.1:8000/blog">
+                                Terms
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div id="header-right" class="flex items-center md:space-x-6">
+                <div class="flex space-x-5">
+                    <a class="flex space-x-2 items-center hover:text-yellow-500 text-sm text-gray-500"
+                       href="http://127.0.0.1:8000/login">
+                        Login
+                    </a>
+                    <a class="flex space-x-2 items-center hover:text-yellow-500 text-sm text-gray-500"
+                       href="http://127.0.0.1:8000/register">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </header>
+
+
+
+        <main class="container mx-auto px-5 flex flex-grow">
+
+        </main>
+
+        <footer class="text-sm space-x-4 flex items-center border-t border-gray-100 flex-wrap justify-center py-4 ">
+            <a class="text-gray-500 hover:text-yellow-500" href="">About Us</a>
+            <a class="text-gray-500 hover:text-yellow-500" href="">Help</a>
+            <a class="text-gray-500 hover:text-yellow-500" href="">Login</a>
+            <a class="text-gray-500 hover:text-yellow-500" href="">Explore</a>
+        </footer>
+
+
 
         @stack('modals')
 

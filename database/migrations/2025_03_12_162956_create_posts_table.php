@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->text('body');
 
-            $table->timestclearamp('published_at')->nullable();
+            $table->timestamp('published_at')->nullable();
             $table->boolean('featured')->default(false);
 
             $table->softDeletes();

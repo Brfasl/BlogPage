@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\Back\BlogsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //test
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', HomeController::class);
 
 
 

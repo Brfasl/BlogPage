@@ -21,6 +21,7 @@
                 @foreach($featuredPosts as $post)
                     <div class="md:col-span-1 col-span-3">
 
+                        <x-posts.post-card :post="$post"/>
                     </div>
                     @endforeach
                 </div>

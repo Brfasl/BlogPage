@@ -1,3 +1,4 @@
+@props(['post'])
 <div class="">
     <a href="http://127.0.0.1:8000/blog/laravel-34">
         <div>

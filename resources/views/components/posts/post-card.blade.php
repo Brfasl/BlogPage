@@ -1,14 +1,14 @@
 @props(['post'])
 <div class="">
-    <a href="http://127.0.0.1:8000/blog/laravel-34">
+    <a href="#">
         <div>
             <img class="w-full rounded-xl"
-                 src="http://127.0.0.1:8000/storage/3i5uKG05UnvhbORZ3ieDkvtAOL8ss5-metaZXAxNSAoMjIpLnBuZw==-.png">
+                 src="{{$post -> image}}">
         </div>
     </a>
     <div class="mt-3">
         <div class="flex items-center mb-2">
-            <a href="http://127.0.0.1:8000/categories/laravel" class="bg-red-600
+            <a href="" class="bg-red-600
                                         text-white
                                         rounded-xl px-3 py-1 text-sm mr-3">
                 Laravel

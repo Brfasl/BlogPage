@@ -13,9 +13,9 @@
                                         rounded-xl px-3 py-1 text-sm mr-3">
                 Laravel
             </a>
-            <p class="text-gray-500 text-sm">2023-09-05</p>
+            <p class="text-gray-500 text-sm">{{$post->published_at}}</p>
         </div>
-        <a class="text-xl font-bold text-gray-900">Laravel 10 tutorial feed page #34</a>
+        <a href="#" class="text-xl font-bold text-gray-900">{{ $post->title }}</a>
     </div>
 
 </div>
